@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('ideas', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('content');
+            $table->unsignedBigInteger('likes')->default(0);
+            $table->timestamps(); // sitas reiskia created_at, updated_at
         });
     }
 

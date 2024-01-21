@@ -53,6 +53,7 @@
             </div>
         </div>
         <hr>
+        @foreach ($ideas as $idea)
         <div class="mt-3">
             <div class="card">
                 <div class="px-3 pt-4 pb-2">
@@ -69,19 +70,16 @@
                 </div>
                 <div class="card-body">
                     <p class="fs-6 fw-light text-muted">
-                        comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes
-                        of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of
-                        ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum
-                        dolor sit amet..", comes from a line in section 1.10.32.
+                        {{ $idea->content }}
                     </p>
                     <div class="d-flex justify-content-between">
                         <div>
                             <a href="#" class="fw-light nav-link fs-6"> <span class="fas fa-heart me-1">
-                                </span> 100 </a>
+                                </span> {{ $idea->likes }} </a>
                         </div>
                         <div>
                             <span class="fs-6 fw-light text-muted"> <span class="fas fa-clock"> </span>
-                                3-5-2023 </span>
+                                {{ $idea->created_at }} </span>
                         </div>
                     </div>
                     <div>
@@ -95,8 +93,7 @@
                         <hr>
                         <div class="d-flex align-items-start">
                             <img style="width:35px" class="me-2 avatar-sm rounded-circle"
-                                src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Luigi"
-                                alt="Luigi Avatar">
+                                src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Luigi" alt="Luigi Avatar">
                             <div class="w-100">
                                 <div class="d-flex justify-content-between">
                                     <h6 class="">Luigi
@@ -118,6 +115,7 @@
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
     <div class="col-3">
         <div class="card">
@@ -126,8 +124,7 @@
             </div>
             <div class="card-body">
                 <input placeholder="...
-                " class="form-control w-100" type="text"
-                    id="search">
+                " class="form-control w-100" type="text" id="search">
                 <button class="btn btn-dark mt-2"> Search</button>
             </div>
         </div>
@@ -145,8 +142,8 @@
                         <a class="h6 mb-0" href="#!">Mario Brother</a>
                         <p class="mb-0 small text-truncate">@Mario</p>
                     </div>
-                    <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i
-                            class="fa-solid fa-plus"> </i></a>
+                    <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i class="fa-solid fa-plus">
+                        </i></a>
                 </div>
                 <div class="hstack gap-2 mb-3">
                     <div class="avatar">
@@ -157,8 +154,8 @@
                         <a class="h6 mb-0" href="#!">Mario Brother</a>
                         <p class="mb-0 small text-truncate">@Mario</p>
                     </div>
-                    <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i
-                            class="fa-solid fa-plus"> </i></a>
+                    <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i class="fa-solid fa-plus">
+                        </i></a>
                 </div>
                 <div class="d-grid mt-3">
                     <a class="btn btn-sm btn-primary-soft" href="#!">Show More</a>
@@ -168,6 +165,5 @@
     </div>
 </div>
 </div>
-    
+
 @endsection
-   
